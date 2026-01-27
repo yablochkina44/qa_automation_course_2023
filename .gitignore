@@ -1,0 +1,12 @@
+# Build outputs
+build/
+out/
+bin/
+*.class
+
+# Gradle
+.gradle/
+gradle-app.setting
+
+# IntelliJ IDEA
+.idea/
