@@ -1,20 +1,16 @@
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import com.codeborne.selenide.Selenide;
-import org.openqa.selenium.Keys;
-
 import java.io.File;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class StudentRegistrationForm {
+public class StudentRegistrationFormTest {
 
     @BeforeAll
-    static void beforeall() {
+    static void beforehand() {
         Configuration.holdBrowserOpen = true;
         open("https://demoqa.com/automation-practice-form");
         Configuration.browserSize = "1920x1080";
