@@ -124,13 +124,15 @@ public class StudentRegistrationFormTest {
                 .verifyResult("Date of Birth", birthDay + " " + birthMonth + "," + birthYear)
                 .verifyResult("Hobbies", hobby1);
     }
-
+    @Test
     void successTest1(){
         assertTrue(true);
     }
+    @Test
     void successTest2(){
         assertTrue(true);
     }
+    @Test
     void successTest3(){
         assertTrue(true);
     }
