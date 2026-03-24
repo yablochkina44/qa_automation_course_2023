@@ -51,6 +51,8 @@ test {
 }
 
 tasks.register('registrations_test', Test) {
+    classpath = test.classpath
+    testClassesDirs = test.testClassesDirs
     useJUnitPlatform {
         includeTags("RegistrationForm")
     }
