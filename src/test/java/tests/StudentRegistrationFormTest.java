@@ -17,6 +17,7 @@ import java.util.Locale;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Tag("RegistrationForm")
 public class StudentRegistrationFormTest {
@@ -122,6 +123,16 @@ public class StudentRegistrationFormTest {
                 .verifyResult("Mobile", phone)
                 .verifyResult("Date of Birth", birthDay + " " + birthMonth + "," + birthYear)
                 .verifyResult("Hobbies", hobby1);
+    }
+
+    void successTest1(){
+        assertTrue(true);
+    }
+    void successTest2(){
+        assertTrue(true);
+    }
+    void successTest3(){
+        assertTrue(true);
     }
 
 }
