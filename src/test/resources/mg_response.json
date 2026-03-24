@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "http_code": 200,
+  "generation_id": "mj-gen-42a7f1c9-8e3d-4b2a-9f1c-5d6e7f8a9b0c",
+  "model": "Midjourney V6.1",
+  "prompt_info": {
+    "original_prompt": "A majestic cosmic tiger made of stardust, nebula background, 8k, photorealistic",
+    "translated_prompt": null,
+    "parameters": {
+      "aspect_ratio": "16:9",
+      "stylize": 250,
+      "chaos": 30,
+      "quality": "hd",
+      "version": "6.1"
+    }
+  },
+  "created_at": "2026-02-25T10:30:00Z",
+  "user_id": "user_12345",
+  "generations": [
+    {
+      "index": 1,
+      "image_url": "https://cdn.example.com/generations/mj-gen-42a7f1c9/0001.png",
+      "status": "completed"
+    },
+    {
+      "index": 2,
+      "image_url": "https://cdn.example.com/generations/mj-gen-42a7f1c9/0002.png",
+      "status": "completed"
+    },
+    {
+      "index": 3,
+      "image_url": null,
+      "status": "failed",
+      "error_message": "Content moderation filter triggered"
+    }
+  ]
+}

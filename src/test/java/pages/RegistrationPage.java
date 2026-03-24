@@ -61,16 +61,16 @@ public class RegistrationPage {
         return this;
     }
     public RegistrationPage setAddress(String address){
-        $("#currentAddress").setValue(address);
+        $("#currentAddress").setValue(address).pressEnter();
+        return this;
+    }
+    public RegistrationPage setState(String state){
+        $("#react-select-3-input").setValue(state).pressEnter();
         return this;
     }
     public RegistrationPage setCity(String city){
         // два react-select. Зависимые выпадающие списки.(City) зависит от (State)
-        $("#react-select-3-input").setValue(city).pressEnter();
-        return this;
-    }
-    public RegistrationPage setState(String state){
-        $("#react-select-4-input").setValue(state).pressEnter();
+        $("#react-select-4-input").setValue(city).pressEnter();
         return this;
     }
     public void clickSubmit(){

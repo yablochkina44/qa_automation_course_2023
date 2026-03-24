@@ -1,0 +1,14 @@
+{
+  "title": "example glossary",
+  "gloss_div": {
+    "title": "S",
+    "flag": true,
+    "gloss_list": {
+      "entry1": {
+        "id": "SGML",
+        "term": "Standard Generalized Markup Language",
+        "acronym": "SGML"
+      }
+    }
+  }
+}
