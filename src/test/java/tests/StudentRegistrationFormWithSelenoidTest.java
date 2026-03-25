@@ -3,16 +3,16 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
+import helpers.Attach;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrationPage;
 
 import java.io.File;
 import java.util.Locale;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -59,6 +59,25 @@ public class StudentRegistrationFormWithSelenoidTest {
             // Если передан параметр remote
             Configuration.remote = System.getProperty("selenide.remote");
         }
+        //волшебные строчки для видео
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+    }
+
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+
+    @AfterEach
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
     }
 
     @Test
@@ -68,7 +87,6 @@ public class StudentRegistrationFormWithSelenoidTest {
     @Owner("Наталья Силаева")
     @Link(name = "Задача №1", url = "https://tracker.yandex.ru/AUTOTEST-001")
     void CorrectValueInAllInput(){
-        SelenideLogger.addListener("allure", new AllureSelenide());
         registrationPage.openPage();
         registrationPage.setFirstName(firstName)
                 .setLastName(lastName)
@@ -110,7 +128,6 @@ public class StudentRegistrationFormWithSelenoidTest {
     @Owner("Наталья Силаева")
     @Link(name = "Задача №2", url = "https://tracker.yandex.ru/AUTOTEST-002")
     void inputReqParameters(){
-        SelenideLogger.addListener("allure", new AllureSelenide());
         registrationPage.openPage();
         registrationPage.setFirstName(firstName)
                 .setLastName(lastName)
